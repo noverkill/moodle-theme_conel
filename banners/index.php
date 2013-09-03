@@ -15,9 +15,9 @@ $PAGE->set_pagelayout('admin');
 $PAGE->set_title($audience_name . " Banners");
 $PAGE->set_heading($audience_name . " Banners");
 $PAGE->set_url($CFG->wwwroot.'/theme/conel/banners/index.php');
-$PAGE->requires->css('/theme/conel/banners/styles/banners.css', true);
-$PAGE->requires->css('/lib/jquery/colorbox/colorbox.css', true);
-$PAGE->requires->js('/lib/jquery/jquery-1.7.2.min.js', true);
+$PAGE->requires->css(new moodle_url($CFG->wwwroot.'/theme/conel/banners/styles/banners.css'), true);
+$PAGE->requires->css(new moodle_url($CFG->wwwroot.'/lib/jquery/colorbox/colorbox.css'), true);
+$PAGE->requires->js(new moodle_url($CFG->wwwroot.'/lib/jquery/jquery-1.7.2.min.js'), true);
 
 // body
 echo $OUTPUT->header();
@@ -126,8 +126,8 @@ $other_link = $banners->getOtherLink();
 
 <p><strong><?php echo $other_link; ?></strong></p>
 </div>
-<script type="text/javascript" src="/lib/jquery/colorbox/jquery.colorbox-min.js"></script>
-<script type="text/javascript" src="/theme/conel/banners/js/banners-admin.js"></script>
+<script type="text/javascript" src="<?php echo $CFG->wwwroot; ?>/lib/jquery/colorbox/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="<?php echo $CFG->wwwroot; ?>/theme/conel/banners/js/banners-admin.js"></script>
 <?php
 echo $OUTPUT->footer();
 ?>
