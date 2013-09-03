@@ -1,7 +1,7 @@
 <?php 
 
 /* Banners */
-include($_SERVER['DOCUMENT_ROOT'] . '\theme\conel\banners\Banners.class.php');
+include($CFG->dirroot . '\theme\conel\banners\Banners.class.php');
 $audience = 2; // student
 $banners = new Banners($audience); 
 $banners_exist = $banners->bannersExist();
@@ -36,11 +36,11 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <!-- Banners -->
-    <link rel="stylesheet" type="text/css" href="/lib/jquery/rotator/wt-rotator.css"/>
-    <script type="text/javascript" src="/lib/jquery/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="/lib/jquery/jquery.easing.1.3.min.js"></script>
-    <script type="text/javascript" src="/lib/jquery/rotator/js/jquery.wt-rotator.min.js"></script>
-    <script type="text/javascript" src="/theme/conel/banners/js/config.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot; ?>/lib/jquery/rotator/wt-rotator.css"/>
+    <script type="text/javascript" src="<?php echo $CFG->wwwroot; ?>/lib/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="<?php echo $CFG->wwwroot; ?>/lib/jquery/jquery.easing.1.3.min.js"></script>
+    <script type="text/javascript" src="<?php echo $CFG->wwwroot; ?>/lib/jquery/rotator/js/jquery.wt-rotator.min.js"></script>
+    <script type="text/javascript" src="<?php echo $CFG->wwwroot; ?>/theme/conel/banners/js/config.js"></script>
     <!-- //Banners -->
     <?php echo $OUTPUT->standard_head_html() ?>
 </head>
